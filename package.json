@@ -1,6 +1,6 @@
 {
   "name": "tt-package-os",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A demo package for total t oscar",
   "keywords": [
     "demo",
@@ -22,6 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.16.4",
+    "@changesets/cli": "^2.27.8",
     "prettier": "^3.3.3",
     "tsup": "^8.3.0",
     "typescript": "^5.6.2",
@@ -35,7 +36,9 @@
     "check-exports": "attw --pack . --ignore-rules=cjs-resolves-to-esm",
     "lint": "tsc",
     "test": "vitest run",
-    "dev": "vitest"
+    "dev": "vitest",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci"
   },
   "main": "dist/index.js",
   "exports": {
